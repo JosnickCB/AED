@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
-class nodo;
-class lista;
+class nodo{};
+class lista{};
 struct node{
 	int value;
 	node *left;
@@ -144,11 +144,11 @@ void btree::preorder_print(node *leaf){
 		inorder_print(leaf->right);
 	}
 }
-void recorrer(nodo* ldoble, btree *leaf){
+void recorrer(lista ldoble, node *leaf){
 	if(leaf != NULL){
 		recorrer(ldoble,leaf->left);
 		//cout << leaf->value << ",";
-		ldoble->Insertar(leaf->value);
+		ldoble.Insertar(leaf->value);
 		recorrer(ldoble,leaf->right);
 	}
 }
@@ -295,7 +295,7 @@ int main(){
 	//tree->preorder_print();
 	tree->inorder_print();
 	//tree->postorder_print();
-	ldoble r;
+	lista r;
 	tree->recorrer(r,tree);
 	delete tree;
 
